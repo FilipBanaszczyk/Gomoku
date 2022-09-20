@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/gradient"
+    android:layout_height="match_parent"
+    tools:context=".ActivityGame">
+
+    <LinearLayout
+        android:id="@+id/game_details"
+        android:layout_width="0dp"
+        android:layout_height="144dp"
+
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="196dp"
+            android:layout_weight="1"
+            android:background="@drawable/match_details"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/match_details"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_lvl"
+                    android:layout_width="137dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/retro"
+                    android:gravity="center"
+                    android:text="TEKST"
+                    android:textColor="#40AAA5"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="137dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+
+                    android:fontFamily="@font/retro"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textColor="#40AAA5"
+                    android:textSize="17sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_moves"
+                    android:layout_width="137dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+
+
+                    android:fontFamily="@font/retro"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textColor="#40AAA5"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/tv_wining"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/retro"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:text="TextView"
+                    android:textColor="#40AAA5"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/match_details"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_best_moves"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/retro"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textColor="#40AAA5"
+                    android:textSize="17sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.example.myapplication.GameBoardView
+        android:id="@+id/gameBoardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/gameboard_back"
+        app:layout_constraintDimensionRatio="10:10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_details" />
+
+    <ImageView
+        android:id="@+id/image_game_notification"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="false"
+
+        android:foregroundGravity="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintDimensionRatio="5:2"
+        app:layout_constraintEnd_toStartOf="@+id/btn_restart_game"
+        app:layout_constraintStart_toEndOf="@+id/btn_undo_move"
+        app:layout_constraintTop_toBottomOf="@+id/gameBoardView"
+        app:layout_constraintVertical_bias="0.521"
+        app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:id="@+id/btn_undo_move"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/icon_back"
+
+        android:onClick="undoMoveClick"
+        app:layout_constraintHeight_max="55dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintDimensionRatio="11:10"
+
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameBoardView"
+        app:layout_constraintVertical_bias="0.545" />
+
+    <Button
+        android:id="@+id/btn_restart_game"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/icon_restart"
+
+
+        app:layout_constraintHeight_max="55dp"
+        android:onClick="restartGameClick"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintDimensionRatio="11:10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameBoardView"
+        app:layout_constraintVertical_bias="0.545" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/match_details"
+        android:theme="@style/small_bottom"
+        app:itemIconTint="@drawable/bottom_nav_colors"
+        app:itemTextColor="@drawable/bottom_nav_colors"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

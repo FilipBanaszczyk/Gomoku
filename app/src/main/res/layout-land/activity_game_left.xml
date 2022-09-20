@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/gradient"
+    android:layout_height="match_parent"
+    tools:context=".ActivityGame"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:id="@+id/game_details"
+        android:layout_width="144dp"
+        android:layout_height="0dp"
+        android:background="@drawable/match_details"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/tv_lvl"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:fontFamily="@font/retro"
+            android:gravity="center"
+            android:text="TEKST"
+            android:textColor="#40AAA5"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tv_moves"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+            android:layout_weight="1"
+            android:fontFamily="@font/retro"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#40AAA5"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+
+            android:layout_weight="1"
+            android:fontFamily="@font/retro"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#40AAA5"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tv_wining"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/retro"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#40AAA5"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tv_best_moves"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:height="144dp"
+            android:fontFamily="@font/retro"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:text="TextView"
+            android:textColor="#40AAA5"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <com.example.myapplication.GameBoardView
+        android:id="@+id/gameBoardView"
+        android:layout_width="330dp"
+        android:layout_height="330dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/gameboard_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1
+"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39" />
+
+    <ImageView
+        android:id="@+id/image_game_notification"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="15dp"
+        android:clickable="false"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toStartOf="@+id/game_details"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toEndOf="@+id/gameBoardView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:id="@+id/btn_undo_move"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+
+        android:layout_marginTop="40dp"
+        android:background="@drawable/icon_back"
+        android:onClick="undoMoveClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_restart_game"
+        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintStart_toEndOf="@+id/gameBoardView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_restart_game"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/icon_restart"
+        android:onClick="restartGameClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/game_details"
+        app:layout_constraintHorizontal_bias="0.972"
+        app:layout_constraintStart_toEndOf="@+id/gameBoardView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:itemIconTint="@drawable/bottom_nav_colors"
+        app:itemTextColor="@drawable/bottom_nav_colors"
+        android:layout_marginLeft="390dp"
+        android:background="@drawable/match_details"
+        android:theme="@style/small_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

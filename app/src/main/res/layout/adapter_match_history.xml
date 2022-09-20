@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical"
+    android:paddingBottom="2dp">
+
+    <LinearLayout
+        android:id="@+id/match_list_item"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/button_design">
+
+        <TextView
+            android:id="@+id/tv_winner_ad"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="1"
+            android:fontFamily="@font/retro"
+            android:gravity="center"
+            android:paddingLeft="4dp"
+            android:text="TEKST"
+            android:textColor="#40AAA5"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_date_ad"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:fontFamily="@font/retro"
+            android:gravity="center"
+            android:textColor="#40AAA5"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_mode_ad"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="1"
+            android:fontFamily="@font/retro"
+            android:gravity="center"
+            android:textColor="#40AAA5"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

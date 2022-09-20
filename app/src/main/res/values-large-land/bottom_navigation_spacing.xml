@@ -1,0 +1,6 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="design_bottom_navigation_item_max_width" tools:override="true">270dp</dimen>
+    <dimen name="design_bottom_navigation_active_item_max_width" tools:override="true">470dp</dimen>
+    <dimen name="design_bottom_navigation_height" tools:override="true">76dp</dimen>
+    <dimen name="design_bottom_navigation_icon_size" tools:override="true">30dp</dimen>
+</resources>

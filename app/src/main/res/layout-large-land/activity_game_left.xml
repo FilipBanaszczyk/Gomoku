@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+
+    tools:context=".ActivityGame">
+
+    <LinearLayout
+        android:id="@+id/game_details"
+        android:layout_width="280dp"
+        android:layout_height="0dp"
+        android:background="@drawable/match_details"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.993"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.078">
+
+        <TextView
+            android:id="@+id/tv_lvl"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/retro"
+            android:gravity="center"
+            android:text="TEKST"
+            android:textColor="#40AAA5"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/tv_moves"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/retro"
+
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#40AAA5"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/retro"
+            android:gravity="center"
+
+            android:text="TextView"
+            android:textColor="#40AAA5"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/tv_wining"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/retro"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#40AAA5"
+            android:textSize="30sp" />
+
+        <TextView
+
+            android:id="@+id/tv_best_moves"
+            android:layout_width="match_parent"
+            android:layout_height="234dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/retro"
+            android:gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:text="TextView"
+            android:textColor="#40AAA5"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <com.example.myapplication.GameBoardView
+        android:id="@+id/gameBoardView"
+        android:layout_width="650dp"
+        android:layout_height="650dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/gameboard_back"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintDimensionRatio="1:1
+"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.503" />
+
+    <ImageView
+        android:id="@+id/image_game_notification"
+        android:layout_width="282dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="388dp"
+        android:clickable="false"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.705"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:id="@+id/btn_undo_move"
+        android:layout_width="85dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="720dp"
+        android:layout_marginBottom="632dp"
+        android:background="@drawable/icon_back"
+        android:onClick="undoMoveClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_restart_game"
+        android:layout_width="85dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="304dp"
+        android:layout_marginBottom="632dp"
+        android:background="@drawable/icon_restart"
+        android:onClick="restartGameClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        app:itemIconTint="@drawable/bottom_nav_colors"
+        app:itemTextColor="@drawable/bottom_nav_colors"
+        android:background="@drawable/match_details"
+        android:theme="@style/large_bottom"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
